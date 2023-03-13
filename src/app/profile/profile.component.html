@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>My Profile</title>
+
+    <meta  />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+
+   
+</head>
+<body>
+		
+  <div class="heading">
+
+  <div  *ngIf="isPersonal && !isProfessional || !isPersonal && !isProfessional"> 
+     
+<div class="ScriptTop">
+  <div class="rt-container">
+      <div class="col-rt-4" id="float-right">  
+      </div>
+      <div class="col-rt-2">  
+      </div>
+  </div>
+</div>
+
+<header class="ScriptHeader">
+  <div class="rt-container">
+    <div class="col-rt-12">
+      </div>
+  </div>
+</header>
+
+<section>
+  <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="Scriptcontent">
+            
+<!-- Student Profile -->
+<div class="student-profile py-4" style="position: relative;" *ngIf="isPersonal && !isProfessional || !isPersonal && !isProfessional">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="rt-heading" >
+        <h4>Personal Profile</h4>
+        <p>Welcome to my profile</p>
+      </div>
+   
+      <div class="card shadow-sm">
+        <div class="card-header bg-transparent text-center">
+          <img *ngIf = "!this.gender" class="profile_img" src="../../assets/addfriend.png" alt="student dp">  
+          <img *ngIf = "this.gender == 'Female' " class="profile_img" src="../../assets/girlavtaar.jpg" alt="student dp">
+          <img *ngIf = "this.gender == 'Male' " class="profile_img1" src="../../assets/maleimg.jpg" alt="student dp">
+
+          <h3>{{this.name}}</h3>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-8" >
+
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle   (click)=togglePersonal() value="personal">Personal Profile</mat-button-toggle>
+        <mat-button-toggle (click)=toggleProfessional() value="professional">Professional Profile</mat-button-toggle>
+
+      </mat-button-toggle-group>
+      
+
+      <div class="card shadow-sm" *ngIf="isPersonal && !isProfessional || !isPersonal && !isProfessional ">
+        <div class="card-header bg-transparent border-0">
+          <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Personal Information</h3>
+        </div>
+        <div class="card-body pt-0">
+          
+          <form #productsform = "ngForm">
+          <table class="table table-bordered">
+            <tr>
+              <th width="30%">Name</th>
+              <td width="2%">:</td>
+              <td><input type ="text" name="name" [(ngModel)]="name" required/></td>
+            </tr>
+            <tr>
+              <th width="30%">Birth date	</th>
+              <td width="2%">:</td>
+              <td><input type ="date" name="date"  [(ngModel)]="date" required/></td>
+            </tr>
+            <tr>
+              <th width="30%">Gender</th>
+              <td width="2%">:</td>
+              <td>  <input type ="text" name="gender" [(ngModel)]="gender" required/> </td>
+            </tr>
+            <tr>
+              <th width="30%">Email id</th>
+              <td width="2%">:</td>
+              <td>  <input type ="text" name="email" [(ngModel)]="Email" required/> </td>
+            </tr>
+            <tr>
+              <th width="30%">Contact details</th>
+              <td width="2%">:</td>
+              <td> <input type ="text" name="contactno" [(ngModel)]="contactno" required/> </td>
+            </tr>
+
+            <tr>
+              <th  width="30%">Hobbies</th>
+              <td width="2%">:</td>
+              <td><input type ="text" name="hobies" [(ngModel)]="hobies" required/></td>
+             </tr> 
+           
+             <tr>
+              <th  width="30%">Places like to visit</th>
+              <td width="2%"> : </td>
+              <td><input type ="text" name="places" [(ngModel)]="places" required/> </td>
+             </tr>
+            
+             <tr>
+              <th  width="30%">Favourite movies</th>
+              <td width="2%"> :  </td>
+               <td> <input type ="text" name="favmovies" [(ngModel)]="favmovies" required/></td>
+             </tr>
+
+
+          </table>
+
+          <div > 
+            <button *ngIf="!flag" class="btninsert" (click) = insertDetails(productsform.value)> Add Profile
+            </button>
+            <button  *ngIf="flag" class="btn" (click) = updateDetails()> Update
+          </button></div>  
+          </form>
+         
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>   
+</div>
+  </div>
+  </div>
+</section>
+  </div>
+
+  <div  *ngIf="isProfessional && !isPersonal" > 
+     
+    <div class="ScriptTop">
+      <div class="rt-container">
+          <div class="col-rt-4" id="float-right">  
+          </div>
+          <div class="col-rt-2">  
+          </div>
+      </div>
+    </div>
+    
+    <header class="ScriptHeader">
+      <div class="rt-container">
+        <div class="col-rt-12">
+          </div>
+      </div>
+    </header>
+    
+    <section>
+      <div class="rt-container">
+            <div class="col-rt-12">
+                <div class="Scriptcontent">
+                
+    <!-- Student Profile -->
+    <div class="student-profile py-4" *ngIf="isProfessional && !isPersonal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="rt-heading" >
+           <h4>Professional Profile</h4>
+            <p>Welcome to my profile</p>
+          </div>
+       
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent text-center">
+              <img *ngIf = "!this.gender" class="profile_img" src="../../assets/addfriend.png" alt="student dp">  
+              <img *ngIf = "this.gender == 'Female' " class="profile_img" src="../../assets/girlavtaar.jpg" alt="student dp">
+              <img *ngIf = "this.gender == 'Male' " class="profile_imgmale" src="../../assets/maleimg.jpg" alt="student dp">
+                  <h3>{{this.name}}</h3>
+            </div>
+    
+          </div>
+        </div>
+        <div class="col-lg-8" >
+    
+          <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle (click)=togglePersonal() value="personal">Personal Profile</mat-button-toggle>
+            <mat-button-toggle (click)=toggleProfessional() value="professional">Professional Profile</mat-button-toggle>
+    
+          </mat-button-toggle-group>
+          
+    
+          <div class="card shadow-sm" *ngIf="isProfessional && !isPersonal">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Professional Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <form #productsform = "ngForm">
+
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Name</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="name" [(ngModel)]="name" required/></td>
+                </tr>
+                <tr>
+                  <th width="30%">Gender</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="gender" [(ngModel)]="gender" required/></td>
+                </tr>
+                <tr>
+                  <th width="30%">Qualification	</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="qualification" [(ngModel)]="qualification" required/></td>
+                </tr>
+                <tr>
+                  <th width="30%">Job role</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="jobrole" [(ngModel)]="jobrole" required/></td>
+                </tr>
+                <tr>
+                  <th width="30%">Email </th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="email" [(ngModel)]="email" required/></td>
+                </tr>
+                <tr>
+                  <th width="30%">Contact details</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="contactno" [(ngModel)]="contactno" required/></td>
+                </tr>
+
+                <tr>
+                  <th width="30%">Technologies Known</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="technologies" [(ngModel)]="technologies" required/></td>
+                </tr>
+                <tr>
+                  <th width="30%">Other Skills	</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="otherskills" [(ngModel)]="otherskills" required/></td>
+                </tr>
+                <tr>
+                  <th width="30%">Experience</th>
+                  <td width="2%">:</td>
+                  <td><input type ="text" name="experience" [(ngModel)]="experience" required/></td>
+                </tr>
+              </table>
+              <div > 
+                <button   *ngIf="!flag" class = "btninsert" (click) = insertProfessionalDetails(productsform.value)> Add
+                </button>
+                <button  *ngIf="flag"  class="btn" (click) = updateDetails()> Update
+              </button></div>  
+              </form>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </section>
+              </div>
+              </div>
+              </body>
+              </html>
+
+
+           

@@ -1,0 +1,36 @@
+<html>
+<body >  
+    <div id="bg"></div>
+    
+    <div class="heading1">
+      <h1 >Sign Up</h1>
+     </div>
+    <form #productsform = "ngForm" (ngSubmit)="storeData(productsform.value)">
+      <div class="form-field">
+        <input type="firstname" placeholder="Firstname" required/>
+      </div>
+
+      <div class="form-field">
+        <input type="lastname" placeholder="Lastname" required/>
+      </div>
+
+      <div class="form-field">
+        <input type="text" placeholder="Email" name="username" [(ngModel)]="username" required/>
+      </div>
+      
+      <div class="form-field">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="password" required/>                         </div>
+      
+      <div class="form-field">
+        <button class="btn"   > Sign up</button><br>
+      </div>
+
+      <div class="heading2">
+        Already registered? Click to 
+        <a routerLink="/login" style="text-decoration: none;">Login!!</a>
+       </div>
+    </form>
+</body>
+</html>
+
+

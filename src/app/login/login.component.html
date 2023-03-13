@@ -1,0 +1,31 @@
+<html>
+<body >  
+    <!-- partial:index.partial.html -->
+    <div id="bg"></div>
+    
+    
+    <form  >
+      <div style="margin-top: -10em;">
+      <div class="form-field" >
+        <input type="email" placeholder="Email / Username" value="pooja" name="username" [(ngModel)]="username" required/>
+      </div>
+      
+      <div class="form-field" >
+        <input type="password"  placeholder="Password" value="pmk" name="password" [(ngModel)]="password" required/>            
+      </div>
+      
+      <div class="form-field">
+        <button class="btn" (click)="validate()" >Login</button><br>
+      </div>
+      <div class="form-field">
+        <div class="heading2">
+       New User?
+       <a routerLink="/signup" style="text-decoration: none;"> Signup</a>
+        </div>
+        </div>
+      </div>
+
+      
+    </form>
+</body>
+</html>

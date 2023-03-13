@@ -1,0 +1,82 @@
+
+<h5>Basic</h5>
+
+<p-button
+class ="btn1"
+  (click)=showDialog()
+  icon="pi pi-external-link"
+
+  label="Create Event"
+
+></p-button>
+
+<p-dialog
+
+  header="Header"
+
+  [(visible)]="displayBasic"
+
+
+  [baseZIndex]="10000"
+
+>
+<form  #productsform = "ngForm" (ngSubmit)="storeData(productsform.value)">
+
+<table>
+	<tr>
+	  <th width="30px">CRNumber</th>
+	  <td width="2px">:</td>
+	  <td><input type ="text" name="crNumber" [(ngModel)]="crNumber" required/></td>
+	</tr>
+	<tr>
+	  <th width="30%">EventName	</th>
+	  <td width="2%">:</td>
+	  <td><textarea type ="text" name="eventName" [(ngModel)]="eventName" required></textarea></td>
+	</tr>
+	<tr>
+	  <th width="30%">Summary</th>
+	  <td width="2%">:</td>
+	  <td>  <textarea type ="text" name="summary " [(ngModel)]="summary " required></textarea> </td>
+	</tr>
+	<tr>
+	  <th width="30%">Description</th>
+	  <td width="2%">:</td>
+	  <td><textarea type ="text" name="details" [(ngModel)]="details" required></textarea></td>
+	</tr>
+	<tr>
+	  <th width="30%">Author</th>
+	  <td width="2%">:</td>
+	  <td><input type ="text" name="author" [(ngModel)]="author" required/></td>
+	</tr>
+	<tr>
+	  <th width="30%">Time Range</th>
+	  <td width="2%">:</td>
+	  <td><input type ="text" name="timerange" [(ngModel)]="timerange" required/></td>
+	</tr>
+	<tr>
+	  <th width="30%">StartDate</th>
+	  <td width="2%">:</td>
+	  <td><input type ="text" name="startdate" [(ngModel)]="startdate" required/></td>
+	</tr>
+	<tr>
+	  <th width="30%">EndDate</th>
+	  <td width="2%">:</td>
+	  <td><input type ="text" name="enddate" [(ngModel)]="enddate" required/></td>
+	</tr>
+	
+	<tr>
+		<th width="30%">Host</th>
+		<td width="2%">:</td>
+		<td><input type ="text" name="host" [(ngModel)]="host" required/></td>
+	  </tr>
+  </table>
+  </form>
+
+<button style="background-color: #47AB11; color: #fff ; outline: none;
+  border: none;  border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    font-size: 15px;
+    text-decoration:none; margin-left: 8em; margin-top: 1em;" (click)=storeData(productsform.value)> Save
+</button>
+
+</p-dialog>

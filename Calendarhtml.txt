@@ -1,0 +1,41 @@
+
+
+Calendar.html
+
+
+
+<div id='container' class="col-lg-12">
+    <div class="content-wrapper">
+        <div class="col-lg-9 control-section">
+            <ejs-schedule width='100%' #scheduleObj height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+                (eventClick)="onEventClick($event)">
+            </ejs-schedule> 
+        </div>
+        <div class="col-lg-3 property-section">
+            <table id="property" title="Event Trace" class="table">
+                <tbody>
+                    <tr>
+                        <td class="table">
+                            <div *ngFor="let eventdate of geteventdate" class="eventarea" id="EventArea">
+                                <span class="EventLog" id="EventLog" >{{eventdate}}</span>
+                            </div>
+                        </td>
+
+                        <td class="table">
+                            <div *ngFor="let eventname of geteventname" class="eventarea" id="EventArea">
+                                <span class="EventLog" id="EventLog" >{{eventname}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="evtbtn" style="margin-top: 10em; margin-left: 8em;">
+                                <input id="clear" type="button" (click)="onClick()" value="Clear">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

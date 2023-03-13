@@ -1,0 +1,170 @@
+.navbar{
+
+  justify-content: space-between;
+ }
+ 
+ span{
+   padding-right: 1rem;
+ }
+
+.heading1{
+   
+    text-align: center;
+    height: 100px; 
+    font-size: 30px;
+    position: fixed;
+    left: 20;
+    top: 0;
+  }
+
+  .text{
+    text-align: center;
+    color: aliceblue;
+  }
+
+  .sidebarcontainer{
+    height: 500px
+
+  }
+  .sidenav{
+    width: 250px;
+    background-color: black;
+  }
+
+  .student-profile .card {
+    border-radius: 10px;
+}
+
+.profile_img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    /* margin-top: -80px; */
+    border: 5px solid #ccc;
+    border-radius: 50%;
+    margin-left: 90em;
+    
+}
+
+.profile_img1 {
+  width: 35px;
+  height: 32px;
+  object-fit: cover;
+  margin-top: -10.5em;
+  margin-left: 75em;
+  border: 5px solid #ccc;
+  border-radius: 50%;
+}
+
+section {
+  float: left;
+  width: 100%;
+padding-bottom:3em;
+}
+
+
+.rt-container {
+	margin: 0 auto;
+	padding-left:12px;
+	padding-right:12px;
+}
+.rt-row:before, .rt-row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.rt-row:after {
+  clear: both;
+}
+
+
+.btn1 {
+  outline: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 9px 4px;
+    margin-left: 40px;
+    width: 30px;
+    background-color: #47AB11;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    font-size: 15px;
+    text-decoration:none;
+  }
+
+  .btn2 {
+    outline: none;
+    width: 80px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 9px 4px;
+      margin-left: 60px;
+      background-color: #47AB11;
+      color: #fff;
+      border-radius: 4px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+      font-size: 8px;
+      text-decoration:none;
+    }
+
+.student-profile .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.student-profile .card p {
+    font-size: 16px;
+    color: #000;
+}
+
+
+
+  
+.button1
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+  
+  
+}
+
+.button2
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button3
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button4
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button5
+{
+  text-decoration: none;
+  margin-top: 40px;
+  position: relative;
+  text-align : center;
+  color: aliceblue;
+}

@@ -1,0 +1,76 @@
+.heading1{
+   
+    text-align: center;
+    height: 100px; 
+    font-size: 30px;
+    position: fixed;
+    left: 20;
+    top: 0;
+  }
+
+  .text{
+    text-align: center;
+    color: aliceblue;
+  }
+
+  .navbar{
+
+    justify-content: space-between;
+   }
+   
+   span{
+     padding-right: 1rem;
+   }
+
+
+  .sidebarcontainer{
+    height: 500px
+
+  }
+  .sidenav{
+    width: 250px;
+    background-color: black
+  }
+
+  .button1
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+  
+  
+}
+
+.button2
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button3
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button4
+{
+  text-decoration: none;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button5
+{
+  text-decoration: none;
+  margin-top: 40px;
+  position: relative;
+  text-align : center;
+  color: aliceblue;
+}

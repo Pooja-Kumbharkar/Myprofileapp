@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div >
+  <div style="float: left; width: 30%;">
+  <h1>
+    {{title}}
+  </h1>
+  
+  <fusioncharts
+    width="700"
+    height="400"
+    type="doughnut2d"
+    [dataSource]="dataSource"
+  >
+  </fusioncharts>
+  </div>
+
+  <div style="float: right; width: 50%;">
+    <fusioncharts
+ type="India"
+ width="500"
+ height="600"
+ dataFormat="json"
+ [dataSource]="dataSource1"
+></fusioncharts>
+  </div>
+
+
+</div>
+</html>
+
+
+
+

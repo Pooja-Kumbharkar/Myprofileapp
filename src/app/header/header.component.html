@@ -1,0 +1,41 @@
+<html>
+<body>
+        <div>
+        <mat-toolbar class="navbar">
+        <div >     
+        <button mat-button  (click)="opened=!opened"  style="margin-left: -3em;"><mat-icon>menu</mat-icon></button>
+        <button mat-button routerLink="/home" style="margin-left: 10px;"><mat-icon>home</mat-icon></button>
+        <span  routerLinkActive="active_route"  routerLink="/profile" style="margin-left: 25em;">Profile</span> 
+        <span routerLinkActive="active_route" routerLink="/friendlist" style="margin-left: 1em;">FriendList</span>
+        <span routerLinkActive="active_route" routerLink="/friendsdetails" style="margin-left: 1em;">FriendsDetails</span>
+        <span routerLinkActive="active_route" routerLink="/activities" style="margin-left: 1em;" >ActivityCalendar</span>
+        <span routerLinkActive="active_route" routerLink="/aboutus" style="margin-left: 1em;" >AboutUs</span> 
+
+      </div>
+        
+      </mat-toolbar>
+    
+      
+     
+    </div>
+
+    <div >
+    <mat-sidenav-container class="sidebarcontainer">
+      <mat-sidenav [(opened)]="opened"  mode="side" class="sidenav">
+        <div class = "sidenavdiv">
+        <div class="button1"><a href="/profile" class="button1"> <mat-icon>person</mat-icon><span>Profile</span></a><br></div>
+      <div class="button2"><a  routerLink="/friendlist" class="button2"><mat-icon>group</mat-icon><span>FriendList</span></a><br></div>
+      <div class="button3"><a  routerLink="/friendsdetails" class="button3"><mat-icon>favorite</mat-icon><span>FreindsDetails</span></a><br></div>
+      <div class="button4"><a  routerLink="/activities" class="button4"><mat-icon>border_color</mat-icon><span>ActivityCalendar</span></a><br></div>
+      <div class="button5"><a  routerLink="/aboutus" style="text-decoration:none; color:aliceblue" ><mat-icon>info icon</mat-icon><span>AboutUs</span></a><br></div>
+      </div>
+    </mat-sidenav>
+      <mat-sidenav-content>
+       <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>  
+</div>
+    </body>
+    </html>
+
+    

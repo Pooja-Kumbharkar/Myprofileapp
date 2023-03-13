@@ -1,0 +1,73 @@
+.navbar{
+  
+    justify-content: space-between;
+    color: black;
+    display: flex;
+    background-color:gainsboro;
+   }
+
+   .active_route {
+    margin-top: 10px;
+    text-decoration: underline;
+    color: blue;
+  }
+   .sidebarcontainer{
+    height: 500px;
+    color: black;
+
+  }
+
+  .sidenav{
+    width: 250px;
+    background-color: black;
+    font-size: 16px;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+    
+    }
+ 
+
+.button1
+{
+  text-decoration: none;
+  color: aliceblue;
+  margin-top: 40px;
+  
+  
+}
+
+.button2
+{
+  text-decoration: none;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button3
+{
+  text-decoration: none;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button4
+{
+  text-decoration: none;
+  color: aliceblue;
+  margin-top: 40px;
+}
+
+.button5
+{
+  text-decoration: none;
+  margin-top: 40px;
+  position: relative;
+  color: aliceblue;
+}
+
+.sidenavdiv
+{
+  margin-left: 4em;
+}
+
+

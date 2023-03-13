@@ -1,0 +1,84 @@
+
+Calendar.ts
+
+
+ geteventname : String[] = [];
+  geteventdate : String [] = [];
+  eventinput : String[] = [];//not req ;
+  cols : any[];
+  users : any=[];
+  loginuser :string;
+  calendartask :Calendartaskcomponent;
+  eventdate : String[] = [];
+  events : String[] = [];
+  updateduser : any;
+
+  @ViewChild('scheduleObj', {static :true})
+    public scheduleObj: ScheduleComponent;
+    public eventmodel : Eventmodel = new Eventmodel();
+    public selectedDate: Date = new Date(2018, 3, 1);
+    public views: Array<string> = ['Week', 'Month', 'TimelineWeek', 'TimelineMonth', 'Agenda'];
+   
+    constructor(private calendarservice : CalendarService ,private router : Router ) { 
+      this.loginuser = localStorage.getItem('username');
+
+      this.calendarservice.getUsers().subscribe((data : Users)=>{
+  
+        this.updateduser = data;
+        console.log(this.updateduser)
+
+        for(let eventdata of this.updateduser)
+        {
+        this.geteventname.push(eventdata.eventname);
+        this.geteventdate.push(eventdata.eventdate);
+        }
+        
+        console.log(this.geteventname);
+        console.log(this.geteventdate);
+
+        // this.eventinput = this.updateduser;
+        // console.log(this.eventinput);
+
+
+      }
+      )
+     
+    
+    };
+
+    
+    public allowMultipleOwner: Boolean = true;
+    public ownerDataSource: Object[] = [
+        { OwnerText: 'Nancy', Id: 1, OwnerColor: '#ffaa00' },
+        { OwnerText: 'Steven', Id: 2, OwnerColor: '#f8a398' },
+        { OwnerText: 'Michael', Id: 3, OwnerColor: '#7499e1' }
+    ];
+
+    ngOnInit(): void {
+
+    }
+
+    onClick() {
+      document.getElementById('EventLog').innerHTML = "";
+  }
+  onEventClick(args: any ): void {
+     
+      var months = new Array("Jan", "Feb", "Mar",
+      "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+      "Oct", "Nov", "Dec");  
+      var fulldate =  args.event.StartTime.getDate() + "-" + months[args.event.StartTime.getMonth()] + "-" + args.event.StartTime.getFullYear()
+
+      console.log(fulldate);
+      console.log(args.event.Subject);
+      this.events.push(args.event.Subject);
+      this.eventdate.push(fulldate);
+      
+      // this.events.push({eventname : args.event.Subject , eventdate : fulldate});
+
+        // this.users.push({parentemail : this.loginuser , eventname : this.events, eventdate : this.events})
+        // this.users.push(this.events)
+
+        this.calendartask = new Calendartaskcomponent(this.loginuser, this.events, this.eventdate)
+        console.log(this.calendartask.parentemail)
+        this.calendarservice.storeData(this.calendartask);
+      }

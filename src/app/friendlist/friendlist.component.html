@@ -1,0 +1,83 @@
+<div class="heading">
+
+<div >
+<div style="float:right; width: 80% ; "> 
+<section>
+  <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="Scriptcontent">
+            
+<!-- Student Profile -->
+<div class="student-profile py-4" style="position: relative; float : left ; ">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      
+          <img class="profile_img"  src="../../assets/addfriend.png" alt="student dp" title="add friend" (click)= addFriend() >    
+        </div>
+        </div>
+        </div>  
+        </div>
+        
+
+        
+        <div class="student-profile py-4" style=" float: right;"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                
+                      <img class="profile_img1" src="../../assets/removefriend.png" alt="student dp" (click) = removeFriend() title="remove friend">
+                 
+                  </div>
+                  </div>
+                  </div>
+                  </div> 
+                </div>
+        </div>
+        </div>
+        </section>
+
+        
+        <div class ="grid-container responsive-table" style="margin-top: 40px; width: 69.3%; background-color: antiquewhite;">
+          
+        <p-table #dt [value]="friendlist" [columns]="cols" 
+        [tableStyle]="{'width': '50em'}"
+         [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+        totalRecords="totalRecords" pageLinks="2" selectionMode="single" [responsive]="true">
+
+        <ng-template pTemplate="caption">        
+              <i class="pi pi-search"  ></i>
+              <input type="text" pInputText size="50" placeholder="Global Filter"
+        (input)="dt.filterGlobal($event.target.value, 'contains')" >
+        
+        </ng-template>
+
+
+          <ng-template pTemplate="header" let-columns>
+              <tr>
+                  <th *ngFor = "let col of columns">
+                    {{col.header}}  
+                  </th>
+                 
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-friendlist>
+              <tr>
+                  <td style="text-align: center;">
+                        {{friendlist.name}}
+                  </td>
+                  <td style="text-align: center;">
+                    {{friendlist.contactno}}
+                  </td>
+              <td style="text-align: center;">
+                {{friendlist.Location}}
+              </td>
+              
+              <td style="text-align: center;">
+                {{friendlist.age}}
+              </td>
+              </tr>
+          </ng-template>
+      </p-table>
+    </div>
+      
