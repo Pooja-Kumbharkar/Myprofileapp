@@ -10,7 +10,7 @@ import { Calendartaskcomponent } from './calendartask.component';
     templateUrl: 'calendar.component.html',
     providers: [MessageService]
 })
-export class Calendarcomponent implements OnInit {
+export class CalendarComponent implements OnInit {
   opened;
   loginuser :string;
   updateduser : any;
@@ -27,7 +27,7 @@ export class Calendarcomponent implements OnInit {
   hostdetails : any[] =[];
   calendartask : Calendartaskcomponent;
   
-  constructor( private messageService: MessageService, private calendarservice : CalendarService ,private router : Router ) { 
+  constructor(private messageService: MessageService, private calendarservice : CalendarService ,private router : Router ) { 
     this.loginuser = localStorage.getItem('username');
     this.opened = false;
     
@@ -47,6 +47,12 @@ export class Calendarcomponent implements OnInit {
       this.hostdetails.push(users.host);
       this.calendartask = new Calendartaskcomponent(this.crNumber , this.eventName , this.summary , this.details , this.author , this.timerange , this.startdate , this.enddate , this.hostdetails)
      this.calendarservice.storeData(this.calendartask);
+    }
+
+    dispdata()
+    {
+      this.router.navigate(['/','showevents']);
+
     }
     
     

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DialogModule } from "primeng/dialog";
@@ -24,7 +25,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { Calendarcomponent } from './calendar/calendar.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 import { FusionChartsModule } from "angular-fusioncharts";
 
@@ -63,6 +64,7 @@ import * as World from 'fusioncharts/maps/fusioncharts.world';
 import * as India from 'fusioncharts/maps/fusioncharts.india';
 import { LoginUser } from './common/util/loginusers';
 import { HeaderComponent } from './header/header.component';
+import { ShoweventsComponent } from './calendar/showevents/showevents.component';
 // Pass the fusioncharts library and chart modules
 FusionChartsModule.fcRoot(FusionCharts, India, charts,Maps,World, FusionTheme);
 
@@ -70,6 +72,9 @@ FusionChartsModule.fcRoot(FusionCharts, India, charts,Maps,World, FusionTheme);
 
 
 @NgModule({
+
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  
   declarations: [
     AppComponent,
     HobbyComponent,
@@ -84,7 +89,8 @@ FusionChartsModule.fcRoot(FusionCharts, India, charts,Maps,World, FusionTheme);
     AddfriendComponent,
     RemovefriendComponent,
     HeaderComponent,
-    Calendarcomponent  
+    CalendarComponent,
+    ShoweventsComponent  
 
   ],
   imports: [
@@ -127,7 +133,7 @@ FusionChartsModule.fcRoot(FusionCharts, India, charts,Maps,World, FusionTheme);
 
 
   ],
-  providers: [LoginComponent, LoginUser, DayService, WeekService, MonthService, MonthAgendaService],
+  providers: [DayService, WeekService, MonthService, MonthAgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

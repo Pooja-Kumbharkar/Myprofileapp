@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
  
   title = 'ProfileApp';
   opened;
+  componentName = "hobby"
   
   constructor()
   {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Users } from './users';
+import { Eventdetails } from './users';
 import {Observable} from 'rxjs';
 
 
@@ -32,9 +32,9 @@ export class CalendarService {
     console.log("EVent Stored")
   }
 
-  getUsers() : Observable<Users>{
+  getUsers() : Observable<Eventdetails>{
  
-    return this.http.get<Users>(this.url + "/" + this.loginuser)
+    return this.http.get<Eventdetails>(this.url )
 }
 
  

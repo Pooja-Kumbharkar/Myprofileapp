@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TableModule } from 'primeng/table';
+import { FormsModule } from '@angular/forms';
 import { RemovefriendComponent } from './removefriend.component';
 
 describe('RemovefriendComponent', () => {
@@ -8,7 +9,8 @@ describe('RemovefriendComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RemovefriendComponent ]
+      declarations: [ RemovefriendComponent ],
+      imports : [TableModule, FormsModule]
     })
     .compileComponents();
 

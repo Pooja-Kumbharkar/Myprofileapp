@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-  constructor( private updateprofessionalservice : UpdateprofessionalService,private router : Router,private logincomponent : LoginComponent, private updateservice : UpdateserviceService) { 
+  constructor( private updateprofessionalservice : UpdateprofessionalService,private router : Router, private updateservice : UpdateserviceService) { 
     this.opened = false;
     this.isPersonal = false; 
     this.isProfessional = false;

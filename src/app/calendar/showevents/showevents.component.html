@@ -1,0 +1,55 @@
+<html>
+
+<head><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+ 
+ <div class ="grid-container responsive-table" style="margin-top: 40px; width: 69.3%; background-color: antiquewhite;">
+     
+    <p-table #dt [value]="eventlist" [columns]="cols" 
+    [tableStyle]="{'width': '50em'}"
+     [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+    totalRecords="totalRecords" pageLinks="2" selectionMode="single" [responsive]="true">
+
+    <ng-template pTemplate="caption">        
+          <i class="pi pi-search"  ></i>
+          <input type="text" pInputText size="50" placeholder="Global Filter"
+    (input)="dt.filterGlobal($event.target.value, 'contains')" >
+    
+    </ng-template>
+
+
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th *ngFor = "let col of columns">
+                {{col.header}}  
+              </th>
+             
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-eventlist>
+          <tr>
+              <td style="text-align: center;">
+                    {{eventlist.crNumber}}
+              </td>
+              <td style="text-align: center;">
+                {{eventlist.EventName}}
+              </td>
+          <td style="text-align: center;">
+            {{eventlist.Summary}}
+          </td>
+          
+          <td style="text-align: center;">
+            {{eventlist.Author}}
+          </td>
+
+          <td style="text-align: center;">
+            <mat-icon (click)="savecrn(eventlist.crNumber)" >edit</mat-icon>
+            <mat-icon  routerLink="/deleteevents">delete</mat-icon>
+
+          </td>
+
+          </tr>
+      </ng-template>
+  </p-table>
+</div>
+</html>

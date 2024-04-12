@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TableModule } from 'primeng/table';
+import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup.component';
 
 describe('SignupComponent', () => {
@@ -8,7 +9,8 @@ describe('SignupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignupComponent ]
+      declarations: [ SignupComponent ],
+      imports : [TableModule , FormsModule]
     })
     .compileComponents();
 

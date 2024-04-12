@@ -6,12 +6,13 @@ import { FriendlistComponent } from './friendlist/friendlist.component';
 import { HobbyComponent } from './hobby/hobby.component';
 import { LoginComponent } from './login/login.component';``
 import { SignupComponent } from './signup/signup.component';
-import { Calendarcomponent } from './calendar/calendar.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AddfriendComponent } from './addfriend/addfriend.component';
 import { RemovefriendComponent } from './removefriend/removefriend.component';
 import { UpdatepersonalComponent } from './updatepersonal/updatepersonal.component';
 import { UpdateprofessionalComponent } from './updateprofessional/updateprofessional.component';
+import { ShoweventsComponent } from './calendar/showevents/showevents.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path : "updateprofessional", 
     component : UpdateprofessionalComponent
+  },
+
+  {
+    path : "showevents", 
+    component : ShoweventsComponent
   },
 
   {
@@ -67,7 +73,7 @@ const routes: Routes = [
   },
   {
     path : "activities", 
-    component : Calendarcomponent,
+    component : CalendarComponent,
   },
   {
     path : "aboutus", 

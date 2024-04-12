@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TableModule } from 'primeng/table';
+import { FormsModule } from '@angular/forms';
 import { UpdatepersonalComponent } from './updatepersonal.component';
 
 describe('UpdatepersonalComponent', () => {
@@ -8,7 +9,8 @@ describe('UpdatepersonalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdatepersonalComponent ]
+      declarations: [ UpdatepersonalComponent ],
+       imports : [FormsModule, TableModule]
     })
     .compileComponents();
 

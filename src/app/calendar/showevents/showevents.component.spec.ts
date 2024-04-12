@@ -1,34 +1,27 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TableModule } from 'primeng/table';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './home.component';
+import { ShoweventsComponent } from './showevents.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('ShoweventsComponent', () => {
+  let component: ShoweventsComponent;
+  let fixture: ComponentFixture<ShoweventsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ],
+      declarations: [ ShoweventsComponent ],
       imports : [TableModule , FormsModule]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(ShoweventsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it("Test componnetName" , () => {
-
-
-    expect(component.componentName).toBe("hobby");
-
   });
 });
